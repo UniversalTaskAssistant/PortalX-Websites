@@ -1,14 +1,181 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  const features = [
+    {
+      icon: "🚀",
+      title: "One-Minute Setup",
+      description: "Transform your website with just one line of code. Quick integration that saves you time and resources."
+    },
+    {
+      icon: "🎯",
+      title: "Dynamic UI Generation",
+      description: "Adaptive interfaces that respond to user needs, creating seamless experiences across all devices."
+    },
+    {
+      icon: "🤖",
+      title: "Intelligent Automation",
+      description: "Advanced AI-powered automation handles complex tasks, from customer support to booking management."
+    },
+    {
+      icon: "🔄",
+      title: "Real-time Sync",
+      description: "Stay up-to-date with automatic content synchronization across your entire platform."
+    },
+    {
+      icon: "💡",
+      title: "Multi-modal Delivery",
+      description: "Present information in various formats, ensuring optimal user understanding and engagement."
+    },
+    {
+      icon: "🎨",
+      title: "Brand Integration",
+      description: "Seamlessly blend PortalX with your existing brand identity for a cohesive user experience."
+    }
+  ]
+
+  const stats = [
+    { number: "99%", label: "Customer Satisfaction" },
+    { number: "500+", label: "Active Users" },
+    { number: "50K+", label: "Queries Handled" },
+    { number: "24/7", label: "Support Available" }
+  ]
+
+  const testimonials = [
+    {
+      quote: "PortalX transformed our customer service workflow completely. We've seen a 70% reduction in response time.",
+      author: "Sarah Johnson",
+      position: "CTO, TechCorp",
+      image: "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      quote: "The integration was seamless, and the results were immediate. Our user engagement increased by 300%.",
+      author: "Michael Chen",
+      position: "CEO, StartupX",
+      image: "https://i.pravatar.cc/150?img=2"
+    }
+  ]
+
+  const handleGetStarted = (e) => {
+    e.preventDefault();
+    console.log('Get Started button clicked!');
+  };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Hello React + Vite</h1>
-      <button onClick={() => setCount(count + 1)}>
-        Clicked {count} times
-      </button>
+    <div className="app-container">
+      <nav className="navbar">
+        <div className="logo">PortalX</div>
+        <div className="nav-links">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact" className="nav-cta">Get Started</a>
+        </div>
+      </nav>
+
+      <div className="hero-section">
+        <div className="floating-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+        </div>
+        <h1 className="hero-title">Transform Your Interface with PortalX</h1>
+        <p className="hero-subtitle">
+          The next-generation AI-powered solution that revolutionizes how businesses connect with their users. Deploy in minutes, engage forever.
+        </p>
+        <div className="hero-cta-group">
+          <a href="#contact" className="cta-button">Get Started Free</a>
+          <a href="#demo" className="cta-button secondary">Watch Demo</a>
+        </div>
+      </div>
+
+      <div className="stats-section">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-card">
+            <h3 className="stat-number">{stat.number}</h3>
+            <p className="stat-label">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <section id="features" className="section">
+        <h2 className="section-title">Powerful Features</h2>
+        <p className="section-subtitle">Everything you need to transform your user interface</p>
+        <div className="features-grid">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card">
+              <div className="feature-icon">{feature.icon}</div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="testimonials" className="section testimonials-section">
+        <h2 className="section-title">What Our Clients Say</h2>
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card">
+              <div className="testimonial-content">
+                <p className="testimonial-quote">{testimonial.quote}</p>
+                <div className="testimonial-author">
+                  <img src={testimonial.image} alt={testimonial.author} className="author-image" />
+                  <div className="author-info">
+                    <h4>{testimonial.author}</h4>
+                    <p>{testimonial.position}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section cta-section">
+        <h2 className="section-title">Ready to Transform Your Interface?</h2>
+        <p className="section-subtitle">Join thousands of businesses already using PortalX</p>
+        <div className="cta-group">
+          <a href="#contact" className="cta-button">Start Free Trial</a>
+          <a href="#demo" className="cta-button secondary">Schedule Demo</a>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>PortalX</h3>
+            <p>Next-generation interface solution for modern businesses.</p>
+          </div>
+          <div className="footer-section">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#documentation">Documentation</a>
+          </div>
+          <div className="footer-section">
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#careers">Careers</a>
+            <a href="#blog">Blog</a>
+          </div>
+          <div className="footer-section">
+            <h4>Connect</h4>
+            <a href="#contact">Contact</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#linkedin">LinkedIn</a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2024 PortalX. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
