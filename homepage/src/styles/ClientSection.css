@@ -1,89 +1,129 @@
 .client-section {
   background: var(--background-gradient-light);
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .sectors-container,
 .testimonials-container {
-  margin-bottom: 120px;
+  margin-bottom: 6rem;
   position: relative;
-}
-
-/* Add decorative elements */
-.sectors-container::before,
-.testimonials-container::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--text-gradient);
-  border-radius: 2px;
 }
 
 /* Sectors Styling */
 .sectors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .sector-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 2rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+  grid-column: span 6;
+  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sector-card.featured {
+  grid-column: span 6;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 }
 
 .sector-card:hover {
   transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
 .sector-icon {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
-.sector-card h3 {
+.sector-stat {
+  text-align: right;
+}
+
+.stat-value {
+  display: block;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.sector-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+.stat-label {
+  font-size: 0.9rem;
+  color: #a0a0a0;
 }
 
-/* Testimonials Styling */
-.testimonials-grid {
+/* Testimonials Layout */
+.testimonials-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .testimonial-card {
+  grid-column: span 4;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 2rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
+.testimonial-card.featured {
+  grid-column: span 8;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.testimonial-metrics {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  text-transform: capitalize;
 }
 
 .testimonial-quote {
-  color: var(--text-primary);
   font-size: 1.1rem;
   line-height: 1.6;
+  color: #e0e0e0;
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -92,6 +132,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .author-image {
@@ -102,25 +143,47 @@
 }
 
 .author-info h4 {
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
   font-size: 1.1rem;
 }
 
 .author-info p {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   margin: 0;
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .sectors-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .sector-card {
+    grid-column: span 6;
   }
+  
+  .testimonial-card {
+    grid-column: span 6;
+  }
+  
+  .testimonial-card.featured {
+    grid-column: span 12;
+  }
+}
 
-  .sectors-container,
-  .testimonials-container {
-    margin-bottom: 80px;
+@media (max-width: 768px) {
+  .sector-card,
+  .sector-card.featured,
+  .testimonial-card,
+  .testimonial-card.featured {
+    grid-column: span 12;
+  }
+  
+  .testimonial-metrics {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .metric {
+    flex: 1;
+    min-width: 120px;
   }
 } 
