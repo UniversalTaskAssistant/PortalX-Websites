@@ -1,30 +1,15 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css'
 import AnimatedBackground from './components/AnimatedBackground'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calculate scroll progress (0 to 1) over the first 200px
-      const progress = Math.min(window.scrollY / 200, 1)
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Calculate dynamic background opacity
-  const navbarStyle = {
-    background: `rgba(15, 23, 42, ${scrollProgress * 0.25})`,
-  }
 
   const features = [
     {
@@ -88,15 +73,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <nav className="navbar" style={navbarStyle}>
-        <div className="logo">PortalX</div>
-        <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact" className="nav-cta">Get Started</a>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="hero-section">
         <div className="hero-background">
@@ -166,35 +143,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>PortalX</h3>
-            <p>Next-generation interface solution for modern businesses.</p>
-          </div>
-          <div className="footer-section">
-            <h4>Product</h4>
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#documentation">Documentation</a>
-          </div>
-          <div className="footer-section">
-            <h4>Company</h4>
-            <a href="#about">About</a>
-            <a href="#careers">Careers</a>
-            <a href="#blog">Blog</a>
-          </div>
-          <div className="footer-section">
-            <h4>Connect</h4>
-            <a href="#contact">Contact</a>
-            <a href="#twitter">Twitter</a>
-            <a href="#linkedin">LinkedIn</a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 PortalX. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
