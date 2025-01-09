@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css'
+import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
@@ -81,7 +82,8 @@ function App() {
       </nav>
 
       <div className="hero-section">
-        <div className="floating-shapes">
+        <div className="hero-background">
+          <AnimatedBackground />
           <div className="shape shape-1"></div>
           <div className="shape shape-2"></div>
         </div>
