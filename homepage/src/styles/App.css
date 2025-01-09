@@ -1,7 +1,8 @@
 .app-container {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #000000 0%, #111111 100%);
+  /* background: linear-gradient(135deg, #000000 0%, #111111 100%); */
+  background: #000000;
   color: #fff;
 }
 
@@ -47,47 +48,6 @@
   z-index: 1;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.feature-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.feature-description {
-  color: #94a3b8;
-  line-height: 1.6;
-}
-
 .cta-button {
   background: linear-gradient(90deg, #ffffff, #e0e0e0);
   color: #000000;
@@ -95,14 +55,24 @@
   border-radius: 2rem;
   border: none;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
 }
 
 .floating-shapes {
@@ -157,12 +127,6 @@
   gap: 1.5rem;
   position: relative;
   z-index: 1;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
 }
 
 /* Stats Section */

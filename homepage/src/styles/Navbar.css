@@ -41,9 +41,18 @@
 
 .nav-cta {
   background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 1.5rem;
   color: #000000 !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {

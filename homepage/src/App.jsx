@@ -3,6 +3,7 @@ import './styles/App.css'
 import AnimatedBackground from './components/AnimatedBackground'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import FeatureSection from './components/FeatureSection'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,39 +11,6 @@ function App() {
   useEffect(() => {
     setIsVisible(true)
   }, [])
-
-  const features = [
-    {
-      icon: "🚀",
-      title: "One-Minute Setup",
-      description: "Transform your website with just one line of code. Quick integration that saves you time and resources."
-    },
-    {
-      icon: "🎯",
-      title: "Dynamic UI Generation",
-      description: "Adaptive interfaces that respond to user needs, creating seamless experiences across all devices."
-    },
-    {
-      icon: "🤖",
-      title: "Intelligent Automation",
-      description: "Advanced AI-powered automation handles complex tasks, from customer support to booking management."
-    },
-    {
-      icon: "🔄",
-      title: "Real-time Sync",
-      description: "Stay up-to-date with automatic content synchronization across your entire platform."
-    },
-    {
-      icon: "💡",
-      title: "Multi-modal Delivery",
-      description: "Present information in various formats, ensuring optimal user understanding and engagement."
-    },
-    {
-      icon: "🎨",
-      title: "Brand Integration",
-      description: "Seamlessly blend PortalX with your existing brand identity for a cohesive user experience."
-    }
-  ]
 
   const stats = [
     { number: "99%", label: "Customer Satisfaction" },
@@ -65,11 +33,6 @@ function App() {
       image: "https://i.pravatar.cc/150?img=2"
     }
   ]
-
-  const handleGetStarted = (e) => {
-    e.preventDefault();
-    console.log('Get Started button clicked!');
-  };
 
   return (
     <div className="app-container">
@@ -98,19 +61,7 @@ function App() {
         ))}
       </div>
 
-      <section id="features" className="section">
-        <h2 className="section-title">Powerful Features</h2>
-        <p className="section-subtitle">Everything you need to transform your user interface</p>
-        <div className="features-grid">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-card">
-              <div className="feature-icon">{feature.icon}</div>
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <FeatureSection />
 
       <section id="testimonials" className="section testimonials-section">
         <h2 className="section-title">What Our Clients Say</h2>
