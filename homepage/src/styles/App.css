@@ -161,26 +161,36 @@
 
 /* Section Styles */
 .section {
-  padding: 6rem 2rem;
+  padding: 80px 0;
+}
+
+.section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 2.5rem;
   text-align: center;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  background-clip: text;
-  -webkit-background-clip: text;
+  background: var(--text-gradient);
+  clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .section-subtitle {
   text-align: center;
-  color: #94a3b8;
-  margin-bottom: 3rem;
   font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* Testimonials */
@@ -270,4 +280,45 @@
   .stats-section {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+  }
+} 
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0000006b;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #111;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000 rgba(255, 255, 255, 0.05);
 } 

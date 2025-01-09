@@ -47,7 +47,7 @@ const ClientSection = () => {
   ];
 
   return (
-    <section className="client-section">
+    <section className="section client-section">
       <div className="container">
         <div className="sectors-container">
           <h2 className="section-title">Built for Various Industries</h2>
