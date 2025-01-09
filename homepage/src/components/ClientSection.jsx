@@ -1,29 +1,35 @@
 import React from 'react';
 import '../styles/ClientSection.css';
+import { 
+  FaShoppingCart, 
+  FaLaptopCode, 
+  FaBriefcase, 
+  FaGraduationCap 
+} from 'react-icons/fa';
 
 const ClientSection = () => {
   const sectors = [
     {
       name: 'E-commerce',
-      icon: '🛍️',
+      icon: <FaShoppingCart />,
       description: 'Streamline customer service and shopping assistance',
       stats: { value: '3x', label: 'Sales Growth' }
     },
     {
       name: 'SaaS Companies',
-      icon: '💻',
+      icon: <FaLaptopCode />,
       description: 'Enhance user onboarding and support automation',
       stats: { value: '70%', label: 'Faster Support' }
     },
     {
       name: 'Professional Services',
-      icon: '👔',
+      icon: <FaBriefcase />,
       description: 'Automate client interactions and appointment booking',
       stats: { value: '85%', label: 'Time Saved' }
     },
     {
       name: 'Educational Institutions',
-      icon: '🎓',
+      icon: <FaGraduationCap />,
       description: 'Improve student support and resource accessibility',
       stats: { value: '95%', label: 'Satisfaction' }
     }
