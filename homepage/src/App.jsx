@@ -4,6 +4,7 @@ import AnimatedBackground from './components/AnimatedBackground'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FeatureSection from './components/FeatureSection'
+import ClientSection from './components/ClientSection'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
@@ -17,21 +18,6 @@ function App() {
     { number: "500+", label: "Active Users" },
     { number: "50K+", label: "Queries Handled" },
     { number: "24/7", label: "Support Available" }
-  ]
-
-  const testimonials = [
-    {
-      quote: "PortalX transformed our customer service workflow completely. We've seen a 70% reduction in response time.",
-      author: "Sarah Johnson",
-      position: "CTO, TechCorp",
-      image: "https://i.pravatar.cc/150?img=1"
-    },
-    {
-      quote: "The integration was seamless, and the results were immediate. Our user engagement increased by 300%.",
-      author: "Michael Chen",
-      position: "CEO, StartupX",
-      image: "https://i.pravatar.cc/150?img=2"
-    }
   ]
 
   return (
@@ -63,25 +49,7 @@ function App() {
 
       <FeatureSection />
 
-      <section id="testimonials" className="section testimonials-section">
-        <h2 className="section-title">What Our Clients Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <div className="testimonial-content">
-                <p className="testimonial-quote">{testimonial.quote}</p>
-                <div className="testimonial-author">
-                  <img src={testimonial.image} alt={testimonial.author} className="author-image" />
-                  <div className="author-info">
-                    <h4>{testimonial.author}</h4>
-                    <p>{testimonial.position}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ClientSection />
 
       <section className="section cta-section">
         <h2 className="section-title">Ready to Transform Your Interface?</h2>
