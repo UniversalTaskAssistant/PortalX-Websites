@@ -11,6 +11,7 @@
   -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
   transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo {
@@ -20,6 +21,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
