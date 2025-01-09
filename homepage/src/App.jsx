@@ -4,10 +4,27 @@ import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate scroll progress (0 to 1) over the first 200px
+      const progress = Math.min(window.scrollY / 200, 1)
+      setScrollProgress(progress)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Calculate dynamic background opacity
+  const navbarStyle = {
+    background: `rgba(15, 23, 42, ${scrollProgress * 0.25})`,
+  }
 
   const features = [
     {
@@ -71,7 +88,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <nav className="navbar">
+      <nav className="navbar" style={navbarStyle}>
         <div className="logo">PortalX</div>
         <div className="nav-links">
           <a href="#features">Features</a>
