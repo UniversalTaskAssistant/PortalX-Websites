@@ -78,8 +78,6 @@ function App() {
       <div className="hero-section">
         <div className="hero-background">
           <AnimatedBackground />
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
         </div>
         <h1 className="hero-title">Transform Your Interface with PortalX</h1>
         <p className="hero-subtitle">

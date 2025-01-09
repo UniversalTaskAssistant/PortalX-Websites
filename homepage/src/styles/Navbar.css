@@ -17,11 +17,10 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
@@ -31,20 +30,20 @@
 }
 
 .nav-links a {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .nav-cta {
-  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
   padding: 0.5rem 1rem;
   border-radius: 1.5rem;
-  color: white !important;
+  color: #000000 !important;
 }
 
 @media (max-width: 768px) {

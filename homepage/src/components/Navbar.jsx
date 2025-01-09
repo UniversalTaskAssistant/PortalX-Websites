@@ -16,7 +16,7 @@ const Navbar = () => {
   }, [])
 
   const navbarStyle = {
-    background: `rgba(15, 23, 42, ${scrollProgress * 0.25})`,
+    background: `rgba(10, 10, 10, ${scrollProgress * 0.25})`,
   }
 
   return (

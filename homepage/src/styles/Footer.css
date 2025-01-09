@@ -1,8 +1,8 @@
 .footer {
-  font-family: 'Poppins', sans-serif;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(0, 0, 0, 0.3);
   padding: 4rem 2rem 2rem;
   margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-content {
@@ -13,26 +13,36 @@
   margin: 0 auto;
 }
 
-.footer-section h3, .footer-section h4 {
-  color: #fff;
+.footer-section h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-section h4 {
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .footer-section p, .footer-section a {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   display: block;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
 } 
