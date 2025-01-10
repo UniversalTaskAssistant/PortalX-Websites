@@ -45,7 +45,7 @@ const LiveDemo = () => {
         <div className="demo-input-container">
           <input
             type="url"
-            placeholder="Enter your website URL (e.g., www.example.com)"
+            placeholder="Enter your website link (e.g., www.example.com)"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             className="url-input"
@@ -81,7 +81,27 @@ const LiveDemo = () => {
                 </div>
             </div>
             <div className="demo-site">
-                <iframe src={url} title="Demo Site" />
+                {!url ? (
+                    <div className="demo-initial-message">
+                        <h3>How It Works</h3>
+                        <div className="demo-steps">
+                            <div className="step">
+                                <div className="step-number">1</div>
+                                <p>Input your site link</p>
+                            </div>
+                            <div className="step">
+                                <div className="step-number">2</div>
+                                <p>PortalX will analyze pages in this site</p>
+                            </div>
+                            <div className="step">
+                                <div className="step-number">3</div>
+                                <p>PortalX will deploy a Chat Portal for your site</p>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <iframe src={url} title="Demo Site" />
+                )}
             </div>
         </div>
       </div>

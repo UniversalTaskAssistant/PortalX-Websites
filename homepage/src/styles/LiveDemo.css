@@ -269,7 +269,7 @@
 }
 
 .demo-site {
-  height: 500px;
+  height: 60vh;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.9);
   position: relative;
@@ -324,5 +324,141 @@
 
   .demo-site {
     height: 400px;
+  }
+} 
+
+.demo-initial-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.demo-initial-message h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #fff, antiquewhite);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(62, 184, 255, 0.3);
+}
+
+.demo-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: rgba(62, 184, 255, 0.05);
+  border: 1px solid rgba(62, 184, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateX(10px);
+  background: rgba(62, 184, 255, 0.1);
+  border-color: rgba(62, 184, 255, 0.2);
+  box-shadow: 0 0 15px rgba(62, 184, 255, 0.1);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(250, 235, 215, 0.9);
+  color: #000;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step p {
+  margin: 0;
+  text-align: left;
+  font-size: 1rem;
+  color: antiquewhite;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .demo-initial-message h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .demo-steps {
+    gap: 1rem;
+  }
+
+  .step {
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+  }
+}
+
+.demo-features {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.demo-features span {
+  background: rgba(62, 184, 255, 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(62, 184, 255, 0.2);
+  font-size: 0.9rem;
+  color: antiquewhite;
+  transition: all 0.3s ease;
+}
+
+.demo-features span:hover {
+  transform: translateY(-2px);
+  background: rgba(62, 184, 255, 0.2);
+  border-color: rgba(62, 184, 255, 0.3);
+  box-shadow: 0 0 15px rgba(62, 184, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .demo-initial-message h3 {
+    font-size: 1.4rem;
+  }
+
+  .demo-initial-message p {
+    font-size: 1rem;
+  }
+
+  .demo-features {
+    gap: 1rem;
+  }
+
+  .demo-features span {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
   }
 } 
