@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FeatureSection from './components/FeatureSection'
 import ClientSection from './components/ClientSection'
+import LiveDemo from './components/LiveDemo'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,9 +48,12 @@ function App() {
         ))}
       </div>
 
+      <LiveDemo />
+      
       <FeatureSection />
 
       <ClientSection />
+
 
       <section className="section cta-section">
         <h2 className="section-title">Ready to Transform Your Interface?</h2>
