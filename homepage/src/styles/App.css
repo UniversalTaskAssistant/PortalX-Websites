@@ -1,7 +1,9 @@
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
 .app-container {
-  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  /* background: linear-gradient(135deg, #000000 0%, #111111 100%); */
   background: #000000;
   color: #fff;
 }
@@ -20,7 +22,6 @@
 }
 
 .hero-title {
-  font-family: 'Poppins', sans-serif;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -36,7 +37,6 @@
 }
 
 .hero-subtitle {
-  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: clamp(1.1rem, 3vw, 1.4rem);
   max-width: 800px;
@@ -49,7 +49,6 @@
 }
 
 .cta-button {
-  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   padding: 15px 30px;
   font-size: 1rem;
@@ -161,7 +160,6 @@
 }
 
 .stat-number {
-  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   background: linear-gradient(90deg, #ffffff, #e0e0e0);
