@@ -3,7 +3,7 @@ import '../styles/FeatureSection.css';
 import { FaRocket, FaChartLine, FaPalette, FaChartBar, FaTools, FaCog } from 'react-icons/fa';
 import { MdAutoAwesome, MdSync, MdDashboard, MdAnalytics, MdSettings } from 'react-icons/md';
 import { BiUserVoice } from 'react-icons/bi';
-import chatPortalImg from '../assets/photo-chatportal.avif';
+import chatPortalImg from '../assets/photo-chatportal.jpg';
 import dashboardImg from '../assets/photo-dashboard.avif';
 
 const FeatureSection = () => {
