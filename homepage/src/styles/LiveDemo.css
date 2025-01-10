@@ -88,34 +88,6 @@
   outline: none;
 }
 
-.cta-button {
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #000;
-  background-color: antiquewhite;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  width: 230px;
-  text-align: center;
-}
-
-.cta-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-}
-
-.cta-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
 .spinner {
   width: 20px;
   height: 20px;
@@ -140,11 +112,6 @@
   .demo-input-container {
     flex-direction: column;
     padding: 20px 10px;
-  }
-  
-  .cta-button {
-    width: 100%;
-    justify-content: center;
   }
 
   .url-input {
