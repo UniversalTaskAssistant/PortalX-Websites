@@ -3,6 +3,8 @@ import '../styles/FeatureSection.css';
 import { FaRocket, FaChartLine, FaPalette, FaChartBar, FaTools, FaCog } from 'react-icons/fa';
 import { MdAutoAwesome, MdSync, MdDashboard, MdAnalytics, MdSettings } from 'react-icons/md';
 import { BiUserVoice } from 'react-icons/bi';
+import chatPortalImg from '../assets/photo-chatportal.avif';
+import dashboardImg from '../assets/photo-dashboard.avif';
 
 const FeatureSection = () => {
   const majorFeatures = [
@@ -11,7 +13,7 @@ const FeatureSection = () => {
       title: "1-Minute Deployment Chat Portal",
       description: "Transform your website instantly with our simple integration. Just add a few lines of code and your AI-powered chat portal is ready to go.",
       highlight: "Quick Setup",
-      image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=1200&q=80",
+      image: chatPortalImg,
       minorFeatures: [
         {
           icon: <FaPalette />,
@@ -40,7 +42,7 @@ const FeatureSection = () => {
       title: "Client Dashboard",
       description: "Comprehensive analytics, documentation management, and customization settings all in one intuitive dashboard.",
       highlight: "Full Control",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      image: dashboardImg,
       minorFeatures: [
         {
           icon: <FaChartBar />,
