@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/ClientSection.css';
 import { 
   FaShoppingCart, 
@@ -8,6 +8,8 @@ import {
 } from 'react-icons/fa';
 
 const ClientSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const sectors = [
     {
       name: 'E-commerce',
@@ -35,94 +37,42 @@ const ClientSection = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "PortalX transformed our customer service workflow completely. We've seen a 70% reduction in response time.",
-      author: "Sarah Johnson",
-      position: "CTO, TechCorp",
-      image: "https://i.pravatar.cc/150?img=1",
-      featured: true,
-      metrics: {
-        responseTime: "70%",
-        satisfaction: "95%"
-      }
-    },
-    {
-      quote: "The integration was seamless, and the results were immediate. Our user engagement increased by 300%.",
-      author: "Michael Chen",
-      position: "CEO, StartupX",
-      image: "https://i.pravatar.cc/150?img=2",
-      metrics: {
-        engagement: "300%"
-      }
-    },
-    {
-      quote: "PortalX has revolutionized how we handle student inquiries. Response accuracy improved by 90%.",
-      author: "Emily Rodriguez",
-      position: "Dean, Education Plus",
-      image: "https://i.pravatar.cc/150?img=3",
-      metrics: {
-        accuracy: "90%"
-      }
-    }
-  ];
-
   return (
     <section className="section client-section">
       <div className="container">
-        <div className="sectors-container">
-          <h2 className="section-title">Built for Various Industries</h2>
-          <p className="section-subtitle">
-            Especially empowering <u>Small & Medium-sized Businesses</u> with fast & scalable solution
-          </p>
-          
-          <div className="sectors-grid">
+        <h2 className="section-title">Built for Various Industries</h2>
+        <p className="section-subtitle">
+          Especially empowering <u>Small & Medium-sized Businesses</u> with fast & scalable solution
+        </p>
+        
+        <div className="sectors-two-column">
+          <div className="sectors-list">
             {sectors.map((sector, index) => (
-              <div key={index} className={`sector-card ${index === 0 ? 'featured' : ''}`}>
-                <div className="sector-header">
-                  <div className="sector-icon">{sector.icon}</div>
-                  <div className="sector-stat">
-                    <span className="stat-value">{sector.stats.value}</span>
-                    <span className="stat-label">{sector.stats.label}</span>
-                  </div>
-                </div>
+              <div
+                key={index}
+                className={`sector-title ${activeIndex === index ? 'active' : ''}`}
+                onMouseEnter={() => setActiveIndex(index)}
+              >
+                <div className="sector-icon">{sector.icon}</div>
                 <h3>{sector.name}</h3>
-                <p>{sector.description}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="sector-details">
+            <div className="sector-card">
+              <div className="sector-header">
+                <div className="sector-icon">{sectors[activeIndex].icon}</div>
+                <div className="sector-stat">
+                  <span className="stat-value">{sectors[activeIndex].stats.value}</span>
+                  <span className="stat-label">{sectors[activeIndex].stats.label}</span>
+                </div>
+              </div>
+              <h3>{sectors[activeIndex].name}</h3>
+              <p>{sectors[activeIndex].description}</p>
+            </div>
           </div>
         </div>
-
-        {/* <div className="testimonials-container">
-          <h2 className="section-title">Success Stories</h2>
-          <div className="testimonials-layout">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index} 
-                className={`testimonial-card ${testimonial.featured ? 'featured' : ''}`}
-              >
-                <div className="testimonial-content">
-                  <p className="testimonial-quote">{testimonial.quote}</p>
-                  <div className="testimonial-metrics">
-                    {Object.entries(testimonial.metrics).map(([key, value]) => (
-                      <div key={key} className="metric">
-                        <span className="metric-value">{value}</span>
-                        <span className="metric-label">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="testimonial-author">
-                    <img src={testimonial.image} alt={testimonial.author} className="author-image" />
-                    <div className="author-info">
-                      <h4>{testimonial.author}</h4>
-                      <p>{testimonial.position}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
     </section>
   );

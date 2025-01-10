@@ -73,8 +73,8 @@
 }
 
 .sector-icon {
-  font-size: 2rem;
-  color: #ffffff;
+  font-size: 1.5rem;
+  color: antiquewhite;
   opacity: 0.9;
   transition: all 0.3s ease;
 }
@@ -217,5 +217,96 @@
   .metric {
     flex: 1;
     min-width: 120px;
+  }
+}
+
+.sector-card h3{
+  margin-bottom: 0.5rem;
+}
+
+.sectors-two-column {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sectors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sector-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sector-title:hover,
+.sector-title.active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
+}
+
+.sector-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sector-details {
+  position: relative;
+}
+
+.sector-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.sector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sector-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.sector-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color, #61dafb);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .sectors-two-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .sector-title:hover,
+  .sector-title.active {
+    transform: none;
   }
 } 
