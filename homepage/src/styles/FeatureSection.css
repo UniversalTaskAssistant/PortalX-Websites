@@ -25,25 +25,6 @@
   pointer-events: none;
 } */
 
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: #94a3b8;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 4rem;
-}
-
 .main-features {
   display: flex;
   flex-direction: column;

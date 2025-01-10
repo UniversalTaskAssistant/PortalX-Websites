@@ -24,7 +24,7 @@
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  background: antiquewhite;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,7 +49,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  background: antiquewhite;
   color: #000000;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -171,25 +171,24 @@
 }
 
 .section-title {
-  text-align: center;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  background: var(--text-gradient);
-  clip: text;
-  -webkit-text-fill-color: transparent;
   font-weight: 700;
+  text-align: center;
+  background: antiquewhite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
   letter-spacing: -0.5px;
   line-height: 1.2;
 }
 
 .section-subtitle {
   text-align: center;
+  color: #94a3b8;
   font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 4rem;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 4rem;
   line-height: 1.6;
 }
 
