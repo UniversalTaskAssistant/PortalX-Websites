@@ -5,13 +5,34 @@ import '../styles/App.css';
 const LiveDemo = () => {
   const [url, setUrl] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [stats, setStats] = useState({
+    pages: 0,
+    domains: 0,
+    fails: 0
+  });
 
   const handleAnalyze = () => {
     setIsAnalyzing(true);
-    // Simulate analysis process
+    // Reset stats
+    setStats({
+      pages: 0,
+      domains: 0,
+      fails: 0
+    });
+
+    // Simulate analysis process with updating stats
+    const interval = setInterval(() => {
+      setStats(prev => ({
+        pages: Math.min(prev.pages + Math.floor(Math.random() * 3), 12),
+        domains: Math.min(prev.domains + Math.floor(Math.random() * 2), 5),
+        fails: Math.min(prev.fails + Math.floor(Math.random() * 1), 2)
+      }));
+    }, 500);
+
+    // End the analysis after 3 seconds
     setTimeout(() => {
+      clearInterval(interval);
       setIsAnalyzing(false);
-      // Add actual analysis logic here
     }, 3000);
   };
 
@@ -43,6 +64,25 @@ const LiveDemo = () => {
               'Get Your Chat Portal'
             )}
           </button>
+        </div>
+        <div className="demo-window">
+            <div className="demo-status">
+                <div className="status-item">
+                    <span className="status-label">Pages</span>
+                    <span className="status-value">{stats.pages}</span>
+                </div>
+                <div className="status-item">
+                    <span className="status-label">Domains</span>
+                    <span className="status-value">{stats.domains}</span>
+                </div>
+                <div className="status-item">
+                    <span className="status-label">Fails</span>
+                    <span className="status-value">{stats.fails}</span>
+                </div>
+            </div>
+            <div className="demo-site">
+                <iframe src={url} title="Demo Site" />
+            </div>
         </div>
       </div>
     </section>
