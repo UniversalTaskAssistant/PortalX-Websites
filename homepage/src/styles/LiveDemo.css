@@ -67,21 +67,25 @@
   flex: 1;
   padding: 15px 25px;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   outline: none;
-  color: #fff;
+  color: dimgray;
   transition: all 0.3s ease;
 }
 
 .url-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 
 .url-input:focus {
   border-color: antiquewhite;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid antiquewhite;
+  box-shadow: 0 0 15px rgba(250, 235, 215, 0.8),
+              0 0 5px rgba(250, 235, 215, 0.9);
+  outline: none;
 }
 
 .cta-button {
@@ -98,6 +102,8 @@
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  width: 230px;
+  text-align: center;
 }
 
 .cta-button:hover:not(:disabled) {
@@ -117,6 +123,7 @@
   border-radius: 50%;
   border-top-color: #000;
   animation: spin 1s linear infinite;
+  margin-left:20px;
 }
 
 @keyframes spin {

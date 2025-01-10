@@ -37,7 +37,7 @@ const LiveDemo = () => {
             {isAnalyzing ? (
               <>
                 <span className="spinner"></span>
-                Analyzing...
+                Analyzing ...
               </>
             ) : (
               'Get Your Chat Portal'
