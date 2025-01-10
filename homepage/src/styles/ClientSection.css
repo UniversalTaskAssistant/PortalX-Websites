@@ -44,13 +44,14 @@
 }
 
 .sector-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+  border-radius: 6px;
   padding: 2rem;
-  grid-column: span 6;
+  height: 100%;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid antiquewhite;
+  box-shadow: 0 0 15px rgba(250, 235, 215, 0.3),
+              0 0 5px rgba(250, 235, 215, 0.9);
   position: relative;
   overflow: hidden;
 }
@@ -61,8 +62,8 @@
 }
 
 .sector-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(250, 235, 215, 0.4),
+              0 0 10px rgba(250, 235, 215, 0.9);
 }
 
 .sector-header {
@@ -245,13 +246,18 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+  border: 1px solid antiquewhite;
+  box-shadow: 0 0 15px rgba(250, 235, 215, 0.3),
+              0 0 5px rgba(250, 235, 215, 0.9);
 }
 
 .sector-title:hover,
 .sector-title.active {
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(10px);
+  box-shadow: 0 0 30px rgba(250, 235, 215, 0.3),
+              0 0 10px rgba(250, 235, 215, 0.9);
 }
 
 .sector-title h3 {
@@ -261,14 +267,6 @@
 
 .sector-details {
   position: relative;
-}
-
-.sector-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 2rem;
-  height: 100%;
-  transition: all 0.3s ease;
 }
 
 .sector-header {
