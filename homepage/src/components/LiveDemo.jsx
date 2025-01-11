@@ -56,10 +56,10 @@ const LiveDemo = () => {
             disabled={isAnalyzing || !url}
           >
             {isAnalyzing ? (
-              <>
-                <span className="spinner"></span>
-                Analyzing ...
-              </>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span className="spinner" />
+                <span>Analyzing...</span>
+              </div>
             ) : (
               'Get Your Chat Portal'
             )}
