@@ -1,7 +1,27 @@
 import React, { useState } from 'react';
+import { FaCircleCheck } from "react-icons/fa6";
 import $ from 'jquery';
 import '../styles/LiveDemo.css';
 import '../styles/App.css';
+
+const setStepLoading = (stepElement) => {
+  stepElement.classList.add('step-loading');
+  const spinner = document.createElement('span');
+  spinner.className = 'spinner';
+  stepElement.appendChild(spinner);
+};
+
+const removeStepLoading = (stepElement) => {
+  stepElement.classList.remove('step-loading');
+  const spinner = stepElement.querySelector('.spinner');
+  if (spinner) {
+    spinner.remove();
+  }
+};
+
+const setStepSuccess = (stepElement) => {
+  stepElement.classList.add('step-success');
+};
 
 const LiveDemo = () => {
   const [url, setUrl] = useState('');
@@ -43,6 +63,16 @@ const LiveDemo = () => {
       success: function(data) {
         console.log('Received response:', data);
         if (data.status === 'success') {
+          const step1 = document.querySelector('.demo-steps .step:nth-child(1)');
+          const step2 = document.querySelector('.demo-steps .step:nth-child(2)');
+          const step3 = document.querySelector('.demo-steps .step:nth-child(3)');
+          
+          setStepSuccess(step1);
+          setTimeout(() => {
+            setStepLoading(step2);
+            setStepLoading(step3);
+          }, 500);
+
           // Start updating stats to show progress
           const interval = setInterval(() => {
             setStats(prev => ({
@@ -54,6 +84,11 @@ const LiveDemo = () => {
 
           // End the analysis after 3 seconds
           setTimeout(() => {
+            removeStepLoading(step2);
+            removeStepLoading(step3);
+            setStepSuccess(step2);
+            setStepSuccess(step3);
+
             clearInterval(interval);
             setIsAnalyzing(false);
           }, 3000);
@@ -120,27 +155,23 @@ const LiveDemo = () => {
                 </div>
             </div>
             <div className="demo-site">
-                {!url ? (
-                    <div className="demo-initial-message">
-                        <h3>How It Works</h3>
-                        <div className="demo-steps">
-                            <div className="step">
-                                <div className="step-number">1</div>
-                                <p>Input your site link</p>
-                            </div>
-                            <div className="step">
-                                <div className="step-number">2</div>
-                                <p>PortalX will analyze pages in this site</p>
-                            </div>
-                            <div className="step">
-                                <div className="step-number">3</div>
-                                <p>PortalX will deploy a Chat Portal for your site</p>
-                            </div>
-                        </div>
-                    </div>
-                ) : (
-                    <iframe src={url} title="Demo Site" />
-                )}
+              <div className="demo-initial-message">
+                  <h3>How It Works</h3>
+                  <div className="demo-steps">
+                      <div className="step">
+                          <div className="step-number">1</div>
+                          <p>Input your site link</p>
+                      </div>
+                      <div className="step">
+                          <div className="step-number">2</div>
+                          <p>PortalX will analyze pages in this site</p>
+                      </div>
+                      <div className="step">
+                          <div className="step-number">3</div>
+                          <p>PortalX will deploy a Chat Portal for your site</p>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
       </div>

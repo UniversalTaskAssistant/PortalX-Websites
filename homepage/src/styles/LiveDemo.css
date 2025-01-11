@@ -327,7 +327,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 1.3rem;
   background: rgba(62, 184, 255, 0.05);
   border: 1px solid rgba(62, 184, 255, 0.1);
   border-radius: 8px;
@@ -362,6 +362,55 @@
   color: antiquewhite;
   line-height: 1.4;
 }
+
+/* Add a starting state for the transition */
+.step p::after {
+  content: '✔';
+  opacity: 0;
+  color: green;
+  font-size: 1.2rem;
+  margin-left: 18px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.step-success {
+  transition: all 0.3s ease;
+  background-color: rgba(62, 184, 255, 0.25);
+}
+
+.step-success p::after {
+  content: '✔';
+  color: green;
+  font-size: 1.2rem;
+  margin-left: 18px;
+  opacity: 1 !important;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.step-loading .spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(62, 184, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: rgba(62, 184, 255, 1);
+  animation: 
+    spin 1s linear infinite,
+    fadeIn 0.3s ease-in;
+  margin-left: -35px;
+  vertical-align: middle;
+  margin-right: -5px !important;
+} 
 
 @media (max-width: 768px) {
   .demo-initial-message h3 {
