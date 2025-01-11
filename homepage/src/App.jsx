@@ -29,9 +29,9 @@ function App() {
         <div className="hero-background">
           <AnimatedBackground />
         </div>
-        <h1 className="hero-title">Transform Your Interface with PortalX</h1>
+        <h1 className="hero-title">Chat Portal to Your Digital World</h1>
         <p className="hero-subtitle">
-          The next-generation AI-powered solution that revolutionizes how businesses connect with their users. Deploy in minutes, engage forever.
+          Your smart digital assistant powered by Generative UI and Automation. One-minute setup, zero complexity.
         </p>
         <div className="hero-cta-group">
           <a href="#contact" className="cta-button">Get Started Free</a>
