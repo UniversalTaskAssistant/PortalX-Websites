@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import $ from 'jquery';
 import '../styles/LiveDemo.css';
 import '../styles/App.css';
 
@@ -20,20 +21,58 @@ const LiveDemo = () => {
       fails: 0
     });
 
-    // Simulate analysis process with updating stats
-    const interval = setInterval(() => {
-      setStats(prev => ({
-        pages: Math.min(prev.pages + Math.floor(Math.random() * 3), 12),
-        domains: Math.min(prev.domains + Math.floor(Math.random() * 2), 5),
-        fails: Math.min(prev.fails + Math.floor(Math.random() * 1), 2)
-      }));
-    }, 500);
+    $.ajax({
+      url: 'http://localhost:7000/crawl',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: false
+      },
+      data: JSON.stringify({
+        domainName: url,
+        domainLimit: url
+      }),
+      beforeSend: function() {
+        console.log('Sending request to server with data:', {
+          domainName: url,
+          domainLimit: url
+        });
+      },
+      success: function(data) {
+        console.log('Received response:', data);
+        if (data.status === 'success') {
+          // Start updating stats to show progress
+          const interval = setInterval(() => {
+            setStats(prev => ({
+              pages: Math.min(prev.pages + Math.floor(Math.random() * 3), 12),
+              domains: Math.min(prev.domains + Math.floor(Math.random() * 2), 5),
+              fails: Math.min(prev.fails + Math.floor(Math.random() * 1), 2)
+            }));
+          }, 500);
 
-    // End the analysis after 3 seconds
-    setTimeout(() => {
-      clearInterval(interval);
-      setIsAnalyzing(false);
-    }, 3000);
+          // End the analysis after 3 seconds
+          setTimeout(() => {
+            clearInterval(interval);
+            setIsAnalyzing(false);
+          }, 3000);
+        } else {
+          setIsAnalyzing(false);
+          alert(data.message || 'Failed to start crawling');
+        }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log('Request failed:', {
+          status: jqXHR.status,
+          textStatus: textStatus,
+          errorThrown: errorThrown,
+          responseText: jqXHR.responseText
+        });
+        setIsAnalyzing(false);
+        alert('Failed to connect to the server. Check console for details.');
+      }
+    });
   };
 
   return (
